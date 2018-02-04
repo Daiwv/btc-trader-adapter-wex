@@ -12,6 +12,7 @@ const btc_e3_1 = require("btc-e3");
 class WexAdapter {
     constructor(config) {
         this.config = config;
+        this.config = this.config || {};
         const key = this.config.key;
         const secret = this.config.secret;
         if (key && secret) {

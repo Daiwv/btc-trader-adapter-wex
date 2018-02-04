@@ -3,13 +3,14 @@ import { IExchangePublicApi, IExchangeTradeApi, IMarketParamResult, ITickerValue
 export interface IWexAdapterConfig {
     key?: string;
     secret?: string;
-    baseUrl: string;
+    baseUrl?: string;
 }
 class WexAdapter implements IExchangeTradeApi, IExchangePublicApi {
     protected tradeApi: TradeAPI;
     protected publicApi: PublicAPI;
     protected info: IInfoResult;
-    constructor(protected config: IWexAdapterConfig) {
+    constructor(protected config?: IWexAdapterConfig) {
+        this.config = this.config || {};
         const key = this.config.key;
         const secret = this.config.secret;
         if (key && secret) {
