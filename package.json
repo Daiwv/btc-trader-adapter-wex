@@ -5,7 +5,7 @@
   },
   "name": "btc-trader-adapter-wex",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "devDependencies": {
     "@types/jest": "^22.1.1",
