@@ -10,12 +10,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const btc_e3_1 = require("btc-e3");
 class WexAdapter {
-    constructor(credentials) {
-        this.credentials = credentials;
-        if (credentials) {
-            this.tradeApi = new btc_e3_1.TradeAPI(credentials);
+    constructor(config) {
+        this.config = config;
+        const key = this.config.key;
+        const secret = this.config.secret;
+        if (key && secret) {
+            this.tradeApi = new btc_e3_1.TradeAPI({ key, secret, baseUrl: this.config.baseUrl });
         }
-        this.publicApi = new btc_e3_1.PublicAPI();
+        this.publicApi = new btc_e3_1.PublicAPI(this.config);
     }
     pairs() {
         return __awaiter(this, void 0, void 0, function* () {

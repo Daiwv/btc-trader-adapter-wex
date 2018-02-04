@@ -1,14 +1,21 @@
 import { IInfoResult, PublicAPI, TradeAPI } from "btc-e3";
 import { IExchangePublicApi, IExchangeTradeApi, IMarketParamResult, ITickerValue } from "btc-trader";
+export interface IWexAdapterConfig {
+    key?: string;
+    secret?: string;
+    baseUrl: string;
+}
 class WexAdapter implements IExchangeTradeApi, IExchangePublicApi {
     protected tradeApi: TradeAPI;
     protected publicApi: PublicAPI;
     protected info: IInfoResult;
-    constructor(protected credentials?: any) {
-        if (credentials) {
-            this.tradeApi = new TradeAPI(credentials);
+    constructor(protected config: IWexAdapterConfig) {
+        const key = this.config.key;
+        const secret = this.config.secret;
+        if (key && secret) {
+            this.tradeApi = new TradeAPI({ key, secret, baseUrl: this.config.baseUrl });
         }
-        this.publicApi = new PublicAPI();
+        this.publicApi = new PublicAPI(this.config);
     }
     public async pairs() {
         return Object.keys((await this.getInfo()).pairs);
