@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "btc-e3": "^0.2.7",
+    "btc-trader": "^0.0.2"
+  },
+  "name": "btc-trader-adapter-wex",
+  "description": "",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/jest": "^22.1.1",
+    "coveralls": "^3.0.0",
+    "jest": "^22.1.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1"
+  },
+  "scripts": {
+    "test": "tsc && tslint --project=tsconfig.json && jest --verbose --coverage",
+    "watch:test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arvitaly/btc-trader-adapter-wex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arvitaly/btc-trader-adapter-wex/issues"
+  },
+  "homepage": "https://github.com/arvitaly/btc-trader-adapter-wex#readme",
+  "jest": {}
+}
