@@ -18,7 +18,9 @@ class WexAdapter {
         if (key && secret) {
             this.tradeApi = new btc_e3_1.TradeAPI({ key, secret, baseUrl: this.config.baseUrl });
         }
-        this.publicApi = new btc_e3_1.PublicAPI(this.config);
+        this.publicApi = new btc_e3_1.PublicAPI({
+            baseUrl: this.config.baseUrl || "",
+        });
     }
     pairs() {
         return __awaiter(this, void 0, void 0, function* () {

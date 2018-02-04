@@ -16,7 +16,9 @@ class WexAdapter implements IExchangeTradeApi, IExchangePublicApi {
         if (key && secret) {
             this.tradeApi = new TradeAPI({ key, secret, baseUrl: this.config.baseUrl });
         }
-        this.publicApi = new PublicAPI(this.config);
+        this.publicApi = new PublicAPI({
+            baseUrl: this.config.baseUrl || "",
+        });
     }
     public async pairs() {
         return Object.keys((await this.getInfo()).pairs);
