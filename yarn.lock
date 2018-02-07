@@ -401,9 +401,9 @@ btc-e3@^0.2.7:
     isomorphic-fetch "^2.2.1"
     jest-fetch-mock "^1.4.0"
 
-btc-trader@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/btc-trader/-/btc-trader-0.0.2.tgz#8a9bd6f2d6292d85123ba8b09c1ebd1eb8c6cd8b"
+btc-trader@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/btc-trader/-/btc-trader-0.0.5.tgz#7da6bb4c4a6d5aff525709397d85fa79092dae20"
   dependencies:
     sleep-es6 "^0.0.1"
 

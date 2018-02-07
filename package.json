@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "btc-e3": "^0.2.7",
-    "btc-trader": "^0.0.2"
+    "btc-trader": "^0.0.5"
   },
   "name": "btc-trader-adapter-wex",
   "description": "",

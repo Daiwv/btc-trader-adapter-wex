@@ -50,6 +50,8 @@ class WexAdapter implements IExchangeTradeApi, IExchangePublicApi {
                 updated: tick.updated,
                 volume: tick.vol,
                 volumeCurrency: tick.vol_cur,
+                buy: tick.buy,
+                sell: tick.sell,
             };
         }
         return result;
